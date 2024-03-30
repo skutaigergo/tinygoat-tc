@@ -10,10 +10,10 @@ install_ssh() {
     sudo cp ssh_config.orig ssh_config
     sudo cp sshd_config.orig sshd_config
     sudo /usr/local/etc/init.d/openssh start
-    echo "/usr/local/etc/init.d/openssh start" >> /opt/bootlocal.sh
-    echo "/usr/local/etc" >> /opt/.filetool.lst
-    echo "/etc/passwd" >> /opt/.filetool.lst
-    echo "/etc/shadow" >> /opt/.filetool.lst
+    echo "usr/local/etc/init.d/openssh start" >> /opt/bootlocal.sh
+    echo "usr/local/etc" >> /opt/.filetool.lst
+    echo "etc/passwd" >> /opt/.filetool.lst
+    echo "etc/shadow" >> /opt/.filetool.lst
     cd
     filetool.sh -b
 }
@@ -30,7 +30,7 @@ install_alsa() {
     # Store ALSA settings and add to bootlocal and filetool.lst
     sudo alsactl store
     echo "alsactl restore" >> /opt/bootlocal.sh
-    echo "/usr/local/etc/alsa/asound.state" >> /opt/.filetool.lst
+    echo "usr/local/etc/alsa/asound.state" >> /opt/.filetool.lst
     filetool.sh -b
 }
 
