@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Function to install OpenSSH, SSHfs, and SSHPass
 install_ssh() {
