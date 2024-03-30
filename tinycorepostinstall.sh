@@ -40,12 +40,20 @@ install_additional_software() {
     tce-load -wi wget rsync screen mc emelfm2 imagemagick xmms vlc3 filezilla palemoon
 }
 
+# Function to copy backgrounds
+install_backgrounds() {
+	echo 'Copy backgrounds to backgrounds folder'
+	cp ./backgrounds/* /opt/backgrounds/
+{
+
+clear
 # Main menu
 echo 'Choose an option:'
 echo '1. Install OpenSSH, SSHfs, and SSHPass'
 echo '2. Install ALSA (Advanced Linux Sound Architecture)'
 echo '3. Install additional software'
-echo '4. Install all'
+echo '4. Copy cutie goat backgrounds'
+echo '9. Install all'
 
 read choice
 
@@ -53,10 +61,12 @@ case $choice in
     1) install_ssh;;
     2) install_alsa;;
     3) install_additional_software;;
-    4) 
+	4) install_backgrounds;;
+    9) 
         install_ssh
         install_alsa
         install_additional_software
+		install_backgrounds
         ;;
     *) echo 'Invalid choice';;
 esac
