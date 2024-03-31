@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Function to install OpenSSH, SSHfs, and SSHPass
+# Function to install OpenSSH, SSHfs
 install_ssh() {
-    echo 'Install OpenSSH, SSHfs and SSHPass'
-    tce-load -wi openssh sshfs sshpass
+    echo 'Install OpenSSH, SSHfs'
+    tce-load -wi openssh sshfs
 
     # Copy configuration files, start service, add to bootlocal and filetool.lst
     cd /usr/local/etc/ssh
@@ -44,12 +44,12 @@ install_additional_software() {
 install_backgrounds() {
 	echo 'Copy backgrounds to backgrounds folder'
 	cp ./backgrounds/* /opt/backgrounds/
-{
+}
 
 clear
 # Main menu
 echo 'Choose an option:'
-echo '1. Install OpenSSH, SSHfs, and SSHPass'
+echo '1. Install OpenSSH, SSHfS'
 echo '2. Install ALSA (Advanced Linux Sound Architecture)'
 echo '3. Install additional software'
 echo '4. Copy cutie goat backgrounds'
